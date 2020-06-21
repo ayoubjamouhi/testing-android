@@ -1,5 +1,7 @@
 package com.gemouhi.testing;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(i);
                 Toast.makeText(MainActivity.this, "hello" + editText.getText().toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         ListView listV = findViewById(R.id.listV);
         String[] myStringArray = {"Ayoub", "Jamouhi"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.listVie, myStringArray);
+                android.R.layout.simple_list_item_1, myStringArray);
         listV.setAdapter(adapter);
 
     }
